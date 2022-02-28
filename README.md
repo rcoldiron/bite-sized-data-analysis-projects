@@ -7,6 +7,6 @@ This repo will contain my smaller data analysis projects. So, stay tuned!
 
 [Project List](#project-list)
 
-## Project List {#project-list}
+## Project List
 
 Coming soon!
