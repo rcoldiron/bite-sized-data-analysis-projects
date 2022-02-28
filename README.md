@@ -5,8 +5,8 @@ This repo will contain my smaller data analysis projects. So, stay tuned!
 
 ## Table of Contents
 
-[Datasets](#datasets)
-[Project List](#project-list)
+- [Datasets](#datasets)
+- [Project List](#project-list)
 
 
 ## Datasets
