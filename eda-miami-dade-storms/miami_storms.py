@@ -17,6 +17,8 @@ miami = pd.read_csv(
 )
 # Show the DataFrame
 print(miami)
+# Make it pretty - just for fun!
+prettify(miami)
 # Display the shape of the dataset
 print(f"The shape of the Miami-Dade County storm wind events dataset is {miami.shape}.")
 # Display descriptive statistics for numerical values in the dataset
@@ -45,3 +47,16 @@ events_annual.describe()
 ev_plot = events_annual.plot()
 ev_plot.set_xlabel("Year")
 ev_plot.set_ylabel = "Wind Events Frequency"
+# Now analyze the magnitude of Thunderstorm Winds over the time period
+thunderstorm_winds = miami[miami["EVENT_TYPE"]=="Thunderstorm Wind"]
+thunderstorm_winds = thunderstorm_winds[["BEGIN_DATE", "EVENT_TYPE", "MAGNITUDE"]]
+thunderstorm_winds
+# Make it pretty - just for fun!
+prettify(thunderstorm_winds)
+# Check value types
+thunderstorm_winds.info()
+# Magnitude is an "Object" but needs to be numerical
+thunderstorm_winds["MAGNITUDE"] = thunderstorm_winds["MAGNITUDE"].astype(float)
+# Now get a few descriptive statistics
+thunderstorm_winds.describe()
+# NEXT UP, GRAPH MAGNITUDES OVER TIMES
