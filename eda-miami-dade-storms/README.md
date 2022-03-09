@@ -5,10 +5,9 @@ For this project, I downloaded a dataset from the National Centers for Environme
 ## Analysis Process
 
 - Created a Python virtual environment
-- Installed the following packages: `pandas`, `numpy`, `statistics`, `matplotlib`, and `rich-dataframe`.
-- Recorded the commands I used in the terminal in a Python file, with commented outputs
-
-In other projects, I will use Jupyter Notebooks or Google Colab; however, I really love the terminal. 🙂
+- Installed the following packages: `notebook`, `ipywidgets`, `pandas`, `numpy`, `statistics`, `matplotlib`, and `rich-dataframe`.
+- Recorded the commands I used in a Python file
+- Ran the analysis in a Jupyter Notebook, specifically to get the visualizations
 
 ## Summary of Findings
 
