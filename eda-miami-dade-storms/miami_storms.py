@@ -27,20 +27,20 @@ miami.describe()
 events = miami["EVENT_TYPE"]
 events.value_counts()
 # For this EDA, I am only interested in the dates and event types
-miami = miami[["BEGIN_DATE", "EVENT_TYPE"]]
+miami_storms = miami[["BEGIN_DATE", "EVENT_TYPE"]]
 print(miami)
 # Plot the dates and events
-y = miami["EVENT_TYPE"]
-x = miami["BEGIN_DATE"]
+y = miami_storms["EVENT_TYPE"]
+x = miami_storms["BEGIN_DATE"]
 plt.plot_date(x, y)
 # Create sample sizes
-sample_twenty = miami.sample(20)
-sample_thirty = miami.sample(30)
+sample_twenty = miami_storms.sample(20)
+sample_thirty = miami_storms.sample(30)
 # Repeat the samples to make different samples and display in bar graphs
 (sample_twenty.groupby(["BEGIN_DATE", "EVENT_TYPE"]).size().unstack().plot.bar())
 (sample_thirty.groupby(["BEGIN_DATE", "EVENT_TYPE"]).size().unstack().plot.bar())
 # Count annual occurrences of storm wind events in Miami-Dade County
-events_annual = miami.groupby(pd.Grouper(key="BEGIN_DATE", axis=0, freq="1Y")).count()
+events_annual = miami_storms.groupby(pd.Grouper(key="BEGIN_DATE", axis=0, freq="1Y")).count()
 events_annual
 events_annual.describe()
 # Plot the annual frequencies for storm wind events
