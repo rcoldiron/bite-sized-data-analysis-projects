@@ -28,7 +28,7 @@ events = miami["EVENT_TYPE"]
 events.value_counts()
 # For this EDA, I am only interested in the dates and event types
 miami_storms = miami[["BEGIN_DATE", "EVENT_TYPE"]]
-print(miami)
+print(miami_storms)
 # Plot the dates and events
 y = miami_storms["EVENT_TYPE"]
 x = miami_storms["BEGIN_DATE"]
@@ -41,7 +41,7 @@ sample_thirty = miami_storms.sample(30)
 (sample_thirty.groupby(["BEGIN_DATE", "EVENT_TYPE"]).size().unstack().plot.bar())
 # Count annual occurrences of storm wind events in Miami-Dade County
 events_annual = miami_storms.groupby(pd.Grouper(key="BEGIN_DATE", axis=0, freq="1Y")).count()
-events_annual
+print(events_annual)
 events_annual.describe()
 # Plot the annual frequencies for storm wind events
 ev_plot = events_annual.plot()
@@ -50,7 +50,7 @@ ev_plot.set_ylabel = "Wind Events Frequency"
 # Now analyze the magnitude of Thunderstorm Winds over the time period
 thunderstorm_winds = miami[miami["EVENT_TYPE"]=="Thunderstorm Wind"]
 thunderstorm_winds = thunderstorm_winds[["BEGIN_DATE", "EVENT_TYPE", "MAGNITUDE"]]
-thunderstorm_winds
+print(thunderstorm_winds)
 # Make it pretty - just for fun!
 prettify(thunderstorm_winds)
 # Check value types
@@ -59,4 +59,7 @@ thunderstorm_winds.info()
 thunderstorm_winds["MAGNITUDE"] = thunderstorm_winds["MAGNITUDE"].astype(float)
 # Now get a few descriptive statistics
 thunderstorm_winds.describe()
-# NEXT UP, GRAPH MAGNITUDES OVER TIMES
+# Create a plot of the magnitudes.
+y = thunderstorm_winds["MAGNITUDE"]
+x = thunderstorm_winds["BEGIN_DATE"]
+plt.plot_date(x, y)
