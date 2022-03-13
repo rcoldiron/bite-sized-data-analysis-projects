@@ -1,6 +1,4 @@
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import statistics as st
 
@@ -65,3 +63,5 @@ x = thunderstorm_winds["BEGIN_DATE"]
 plt.plot_date(x, y)
 # Return the population variance of Thunderstorm Wind magnitudes
 print(st.pvariance(thunderstorm_winds["MAGNITUDE"]))
+# Return the mode of wind magnitudes
+print(st.mode(thunderstorm_winds["MAGNITUDE"]))
