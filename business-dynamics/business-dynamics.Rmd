@@ -1,0 +1,10 @@
+---
+title: "Bite-Sized Data Analysis: Business Dynamics"
+author: "Roxanna Coldiron"
+date: TBD
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+```
